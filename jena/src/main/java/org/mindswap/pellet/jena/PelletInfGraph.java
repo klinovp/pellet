@@ -167,9 +167,9 @@ public class PelletInfGraph extends BaseInfGraph implements InfGraph {
 
 		ExtendedIterator<Triple> i = GraphQueryHandler.findTriple( kb, this, subject, predicate, object );
 
-		ATerm predicateTerm = predicate.isURI() ? ATermUtils.makeTermAppl(predicate.getURI()) : null;
+		//ATerm predicateTerm = predicate.isURI() ? ATermUtils.makeTermAppl(predicate.getURI()) : null;
 		// look at asserted triples at the end but only for annotation properties, other triples should be inferred
-		if( finder != null && (predicateTerm == null || !kb.isObjectProperty(predicateTerm) && !kb.isDatatypeProperty(predicateTerm))) {
+		if( finder != null) {// && (predicateTerm == null || !kb.isObjectProperty(predicateTerm) && !kb.isDatatypeProperty(predicateTerm))) {
 			TriplePattern tp = new TriplePattern( subject, predicate, object );
 			i = i.andThen( finder.find( tp ) );
 		}

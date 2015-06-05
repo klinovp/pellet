@@ -8,9 +8,9 @@ import java.io.FileNotFoundException;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.mindswap.pellet.PelletOptions;
-import org.mindswap.pellet.jena.PelletInfGraph;
 import org.mindswap.pellet.jena.PelletReasonerFactory;
 
 import com.hp.hpl.jena.ontology.DatatypeProperty;
@@ -36,6 +36,7 @@ public class MiscTests {
 
 	private OntModel model;
 
+	@Ignore
 	@Test
 	public void dataAssertionTest() throws FileNotFoundException {
 		model.read(
